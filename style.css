@@ -1,9 +1,22 @@
+@font-face{
+  font-family: "NewYorkExtraLargeBold";
+  src: url('fonts/NewYorkExtraLarge-Bold.ttf');
+
+  
+}
+
+@font-face{
+  font-family: "SFMonoLight";
+  src: url('fonts/SFMonoLight.woff');
+}
+
 :root {
   --font-roboto: 'Roboto', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
 
   /* Main Page sizes */
-  --title-font-size: 3.375rem; /* 54px  */
+  --title-font-size-large: 3.375rem; /* 54px  */
+  --title-font-size-medium: 2.75rem; /* 44px  */
   --subtitle-main-font-size: 1.375rem; /* 22px  */
   
 
@@ -14,8 +27,6 @@
   --white: #FFFFFF;
   --black: #000000;
   --gray: #D6D6D6;
-
-
 }
 
 * {
@@ -56,7 +67,7 @@ header {
 
 h1 {
   font-family: var(--font-poppins);
-  font-size: var(--title-font-size);
+  font-size: var(--title-font-size-large);
   color: var(--black);
 }
 
@@ -77,5 +88,43 @@ h1 {
 .header-link:active,
 .header-link:focus {
   border-bottom: 2px solid var(--black);
+}
+
+.banner {
+  width: 60%;
+  margin-top: 4.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#title {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-left: 18.125rem;
+  margin-right: 18.125rem;
+  font-family: "NewYorkExtraLargeBold";
+  font-size: var(--title-font-size-large);
+}
+
+#subtitle {
+  margin-left: 26.5rem;
+  margin-right: 26.5rem;
+  margin-bottom: 2.125rem;
+  font-family: "SFMonoLight";
+  text-align: center;
+  font-size: var(--subtitle-main-font-size);
+}
+
+.line {
+  width: 40rem;
+  height: 0.125rem;
+  background-color: var(--black);
+  margin: 0 auto;
 }
 
