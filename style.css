@@ -1,14 +1,4 @@
-@font-face{
-  font-family: "NewYorkExtraLargeBold";
-  src: url('fonts/NewYorkExtraLarge-Bold.ttf');
-
-  
-}
-
-@font-face{
-  font-family: "SFMonoLight";
-  src: url('fonts/SFMonoLight.woff');
-}
+@import url("fonts.css");
 
 :root {
   --font-roboto: 'Roboto', sans-serif;
@@ -58,6 +48,10 @@ header {
   border-bottom: var(--gray) 1px solid;;
 }
 
+.logo {
+  min-height: 1.25rem;
+}
+
 .links {
   display: flex;
   align-items: center;
@@ -65,15 +59,9 @@ header {
   gap: 1.875rem
 }
 
-h1 {
-  font-family: var(--font-poppins);
-  font-size: var(--title-font-size-large);
-  color: var(--black);
-}
-
 .header-link {
   font-size: var(--subtitle-main-font-size);
-  font-family: var(--font-poppins);
+  font-family: "NewYorkSmallMedium";
   padding: 0px 0px 4.25rem 0px;
   border-bottom: transparent 2px solid;
   transition: border-color 0.3s ease-in-out;
@@ -121,10 +109,39 @@ h1 {
   font-size: var(--subtitle-main-font-size);
 }
 
-.line {
-  width: 40rem;
-  height: 0.125rem;
-  background-color: var(--black);
+#title-articles {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: var(--title-font-size-medium);
+  font-family: "NewYorkExtraLargeBold";
+  text-align: center;
+}
+
+.articles {
+  width: 100%;
+  max-width: 640px;
   margin: 0 auto;
+  margin-bottom: 4rem;
+  flex-direction: column;
+  border-top: var(--black) 2px solid;
+}
+
+.grid-articles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  row-gap: 4rem;
+  column-gap: 2rem;
+  /* background-color: var(--black); */
+}
+
+.item {
+  font-family: "SFProDisplayMedium";
+  font-size: var(--subtitle-main-font-size);
+  /* background-color: var(--gray); */
+  text-align: center;
+}
+
+.image-article{
+  width: fit-content;
 }
 

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "NewYorkExtraLargeBold";
+  src: url('fonts/NewYorkExtraLarge-Bold.ttf');
+}
+
+@font-face {
+  font-family: "NewYorkSmallMedium";
+  src: url('fonts/NewYorkSmall-Medium.ttf');
+}
+
+@font-face {
+  font-family: "SFMonoLight";
+  src: url('fonts/SFMono-Light.woff');
+}
+
+@font-face {
+  font-family: "SFProDisplayMedium";
+  src: url('fonts/SFProDisplay-Medium.OTF');
+}
