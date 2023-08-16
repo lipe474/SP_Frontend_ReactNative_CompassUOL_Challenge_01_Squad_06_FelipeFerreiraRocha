@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: "NewYorkSmallRegular";
+  src: url('fonts/NewYorkSmall-Regular.ttf');
+}
+
+@font-face {
   font-family: "SFMonoLight";
   src: url('fonts/SFMono-Light.woff');
 }
@@ -16,4 +21,20 @@
 @font-face {
   font-family: "SFProDisplayMedium";
   src: url('fonts/SFProDisplay-Medium.OTF');
+}
+
+@font-face {
+  font-family: "SFProTextRegular";
+  src: url('fonts/SFProText-Regular.otf');
+}
+
+@font-face {
+  font-family: "SFProTextHeavy";
+  src: url('fonts/SFProText-Heavy.otf');
+}
+
+
+@font-face {
+  font-family: "SFProTextMedium";
+  src: url('fonts/SFProText-Medium.otf');
 }
