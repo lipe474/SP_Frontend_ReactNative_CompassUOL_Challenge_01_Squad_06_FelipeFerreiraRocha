@@ -38,3 +38,8 @@
   font-family: "SFProTextMedium";
   src: url('fonts/SFProText-Medium.otf');
 }
+
+@font-face {
+  font-family: "SFProTextBold";
+  src: url('fonts/SFProText-Bold.otf');
+}
