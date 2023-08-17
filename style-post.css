@@ -13,10 +13,12 @@
   /* Post sizes */
   --subtitle-post-font-size: 2rem; /* 32px  */
   --text-post-font-size: 1.25rem; /* 20px  */
+  --author-informations-font-size: 1rem; /* 16px  */
 
   --white: #FFFFFF;
   --black: #000000;
   --gray: #D6D6D6;
+  --gray-border: #EAEAEA
 }
 
 * {
@@ -82,21 +84,9 @@ header {
 }
 
 .banner-section {
-  padding-top: 10rem;
+  padding-top: 12rem;
+  display: block;
 }
-
-.banner {
-  width: 60%;
-  margin-top: 4.75rem;
-  margin-bottom: 2.75rem;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 
 #title {
   text-align: center;
@@ -110,8 +100,100 @@ header {
 #subtitle {
   margin-left: 26.5rem;
   margin-right: 26.5rem;
-  margin-bottom: 2.125rem;
+  margin-bottom: 3.25rem;
   font-family: "SFMonoLight", var(--font-poppins);
   text-align: center;
   font-size: var(--subtitle-main-font-size-small);
+}
+
+.banner {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  flex-direction: column;
+  border-top: var(--black) 2px solid;
+}
+
+#profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  height: 3.5rem;
+}
+
+#profile-informations {
+  display: flex;
+  flex-direction: row;
+}
+
+#name {
+  font-family: "SFProTextBold";
+  font-size: var(--author-informations-font-size);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+#additional {
+  font-family: "SFProTextRegular";
+  font-size: var(--author-informations-font-size);
+}
+
+#profile-informations {
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-informations > img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+#profile-social-media {
+  border: var(--gray-border) 1px solid;
+  border-radius: 4px;
+  width: 210px;
+  height: 44px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 0px 5px 0px rgb(233, 233, 233);
+}
+
+#social-button {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#social-button:not(:last-child) {
+  border-right: var(--gray-border) 1px solid;
+}
+
+#social-button > img {
+  width: 20px;
+  height: 20px;
+}
+
+#social-button:hover {
+  background-color: var(--gray-border);
+  transition: background-color 0.5s ease-in-out;
 }
