@@ -149,6 +149,8 @@ header {
 
 .image-article{
   width: fit-content;
+  max-width: 304px;
+  max-height: 176px;
 }
 
 footer {
