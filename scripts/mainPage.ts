@@ -9,11 +9,24 @@ async function fetchPosts(): Promise<Post[]> {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     const posts = await response.json();
-    return posts.slice(0, 12);
+
+    const formattedPosts = posts.slice(0, 12).map((post: Post) => {
+      return {
+        ...post,
+        title: capitalizeFirstLetter(post.title),
+        body: capitalizeFirstLetter(post.body)
+      };
+    });
+
+    return formattedPosts;
   } catch (error) {
     console.error('Erro ao buscar posts:', error);
     return [];
   }
+}
+
+function capitalizeFirstLetter(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 async function fetchPexelsImages(): Promise<any[]> {

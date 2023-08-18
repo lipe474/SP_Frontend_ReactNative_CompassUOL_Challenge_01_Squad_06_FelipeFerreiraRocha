@@ -13,13 +13,19 @@ function fetchPosts() {
         try {
             const response = yield fetch('https://jsonplaceholder.typicode.com/posts');
             const posts = yield response.json();
-            return posts.slice(0, 12);
+            const formattedPosts = posts.slice(0, 12).map((post) => {
+                return Object.assign(Object.assign({}, post), { title: capitalizeFirstLetter(post.title), body: capitalizeFirstLetter(post.body) });
+            });
+            return formattedPosts;
         }
         catch (error) {
             console.error('Erro ao buscar posts:', error);
             return [];
         }
     });
+}
+function capitalizeFirstLetter(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
 }
 function fetchPexelsImages() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -29,15 +35,6 @@ function fetchPexelsImages() {
                     Authorization: 'GklaqEoUQnwItsosMnN7j545MRDy0Eh0uJi9mWI540CeFnMr4GBwsCkh' // Substitua pela sua chave de API Pexels
                 }
             });
-            console.log(response.headers, 'response');
-            const rateLimitHeader = response.headers.get('X-Ratelimit-Limit');
-            if (rateLimitHeader) {
-                const remainingRequests = parseInt(rateLimitHeader, 10);
-                console.log(`Remaining requests: ${remainingRequests}`);
-            }
-            else {
-                console.log('Rate limit information not found in response headers.');
-            }
             const data = yield response.json();
             return data.photos;
         }
