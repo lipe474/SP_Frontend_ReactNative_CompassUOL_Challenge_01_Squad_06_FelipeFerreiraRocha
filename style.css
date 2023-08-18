@@ -135,6 +135,7 @@ header {
   grid-template-columns: repeat(2, 1fr); 
   row-gap: 4rem;
   column-gap: 2rem;
+  
 }
 
 .item {
@@ -150,7 +151,6 @@ header {
 .image-article{
   width: fit-content;
   max-width: 304px;
-  max-height: 176px;
 }
 
 footer {
@@ -161,15 +161,11 @@ footer {
 }
 
 .keywords {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 0.5rem;
   margin-bottom: 6.25rem;
-}
-
-#keywords {
-  flex-shrink: 0;
 }
 
 #keywords strong {
