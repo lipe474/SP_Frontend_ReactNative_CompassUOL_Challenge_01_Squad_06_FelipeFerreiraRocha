@@ -27,11 +27,6 @@
     box-sizing: border-box;
 }
 
-ul {
-  list-style: none;
-}
-
-
 a {
   text-decoration: none;
 }
@@ -62,10 +57,11 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 1.875rem;
+  list-style: none;
 }
 
 .header-link {
-  /* padding: 0px 0px 100% 0px; */
+  padding: 0px 0px 59px 0px;
   font-size: var(--subtitle-main-font-size-small);
   font-family: "NewYorkSmallMedium", var(--font-poppins);
   border-bottom: transparent 2px solid;
@@ -131,6 +127,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-top: 1.5rem;
+  margin-bottom: 3.25rem;
   height: 3.5rem;
 }
 
@@ -196,4 +193,23 @@ header {
 #social-button:hover {
   background-color: var(--gray-border);
   transition: background-color 0.5s ease-in-out;
+}
+
+.text-content > h1 {
+  font-family: "SFProDisplayBold";
+  font-size: var(--subtitle-post-font-size);
+  margin-top: 3.625rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-content > p {
+  font-family: "NewYorkMediumRegular";
+  font-size: var(--text-post-font-size);
+  margin-top: 2.5rem;
+  line-height: 2rem;
+}
+
+.text-content > p::first-letter,
+.text-content > h1::first-letter {
+  text-transform: uppercase;
 }
