@@ -303,6 +303,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   row-gap: 2.125rem;
   column-gap: 1.75rem;
+  margin-bottom: 7.125rem;
 }
 
 .item {
@@ -318,4 +319,142 @@ header {
 .image-article {
   width: fit-content;
   max-width: 304px;
+}
+
+.newsletter {
+  margin: 0 auto;
+  width: 640px;
+  height: 320px;
+  border: var(--black) 1px solid;
+  border-top: var(--black) 10px solid;
+}
+
+.newsletter > h1 {
+  font-family: "NewYorkExtraLargeBold", var(--font-poppins);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 3.875rem;
+}
+
+.newsletter > p {
+  font-family: "SFProTextRegular", var(--font-poppins);
+  font-size: var(--text-post-font-size);
+  text-align: center;
+  width: 540px;
+  margin: 0 auto;
+  margin-top: 1.125rem;
+}
+
+.newsletter > form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 520px;
+  height: 54px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.newsletter > form > input {
+  width: 380px;
+  height: 100%;
+  border: 1px solid var(--black);
+  padding-left: 1rem;
+  font-family: "SFProTextRegular", var(--font-poppins);
+  font-size: var(--text-post-font-size);
+}
+
+.newsletter > form > button {
+  width: 140px;
+  height: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "SFProTextBold", var(--font-poppins);
+  font-size: var(--text-post-font-size);
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  margin-top: 6.5rem;
+}
+
+.keywords {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-bottom: 6.25rem;
+}
+
+#keywords strong {
+  margin-right: 25px;
+}
+
+#keywords strong:not(:first-child) {
+  margin-left: 25px;
+}
+
+footer > section > #keywords {
+  color: var(--white);
+  font-family: "SFProTextRegular", var(--font-poppins);
+  font-size: var(--subtitle-main-font-size-small);
+  margin-top: 1.125rem;
+}
+
+footer > section > #keywords > strong {
+  font-family: "SFProTextHeavy", var(--font-poppins);
+}
+
+.section-baseboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#logo-footer {
+  width: 100%;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+#baseboard {
+  font-family: "NewYorkSmallRegular", var(--font-poppins);
+  color: var(--white);
+  text-align: center;
+  margin: 2rem 29.375rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  font-family: "SFProTextMedium", var(--font-poppins);
+  font-size: 1rem;
+  text-align: center;
+  color: var(--white);
+  text-decoration: solid underline var(--white);
+}
+
+small {
+  font-family: "SFProTextRegular", var(--font-poppins);
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--white);
 }
