@@ -3,19 +3,40 @@ export interface Post {
   title: string;
   body: string;
   image: string;
+  comments: Comment[];
+}
+
+export interface Comment {
+  name: string;
+  email: string;
+  body: string;
 }
 async function fetchPosts(): Promise<Post[]> {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const posts = await response.json();
 
-    const formattedPosts = posts.slice(0, 12).map((post: Post) => {
-      return {
-        ...post,
-        title: capitalizeFirstLetter(post.title),
-        body: capitalizeFirstLetter(post.body)
-      };
-    });
+    const formattedPosts = await Promise.all(
+      posts.slice(0, 12).map(async (post: Post) => {
+        const postResponse = await fetch(
+          `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`
+        );
+        const comments = await postResponse.json();
+
+        const formattedComments = comments.map((comment: Comment) => ({
+          name: comment.name,
+          email: comment.email,
+          body: comment.body
+        }));
+
+        return {
+          ...post,
+          title: capitalizeFirstLetter(post.title),
+          body: capitalizeFirstLetter(post.body),
+          comments: formattedComments
+        };
+      })
+    );
 
     return formattedPosts;
   } catch (error) {
@@ -112,7 +133,12 @@ async function createAndAppendPostsContent(): Promise<Post[]> {
       id: post.id,
       title: post.title,
       body: post.body,
-      image: pexelsImages[index].src.large
+      image: pexelsImages[index].src.large,
+      comments: post.comments.map((comment) => ({
+        name: comment.name,
+        email: comment.email,
+        body: comment.body
+      }))
     }));
 
     allPostsStorage(combinedObjects);

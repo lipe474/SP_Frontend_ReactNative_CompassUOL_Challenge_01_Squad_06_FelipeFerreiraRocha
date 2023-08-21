@@ -7,7 +7,6 @@
   --title-font-size-large: 3.375rem; /* 54px  */
   --title-font-size-medium: 2.75rem; /* 44px  */
   --subtitle-main-font-size-medium: 1.375rem; /* 22px  */
-  --subtitle-main-font-size-small: 1.25rem; /* 20px  */
 
   /* Post sizes */
   --subtitle-post-font-size: 2rem; /* 32px  */
@@ -260,6 +259,115 @@ header {
   margin-right: 2rem;
 }
 
+.comments {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--black) 1px solid;
+  border-top: var(--black) 10px solid;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+.comments > h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "NewYorkExtraLargeBold";
+  font-size: 2rem;
+}
+
+.comments > form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comments > form > input {
+  width: 100%;
+  height: auto;
+  border: var(--gray-border) 2px solid;
+  border-radius: 10px;
+  padding-left: 0.5rem;
+  font-family: "SFProTextRegular";
+  font-size: var(--author-informations-font-size);
+}
+
+.comments > form > input:hover {
+  border: var(--black) 2px solid;
+  transition: border 0.5s ease-in-out;
+}
+
+.comments > form > button {
+  width: 4rem;
+  height: 2.5rem;
+  border: var(--gray-border) 2px solid;
+  border-radius: 10px;
+  background-color: var(--white);
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.comments > form > button:hover {
+  background-color: var(--gray-border);
+  border-color: var(--black);
+  transition: background-color 0.5s ease-in-out;
+  transition: border-color 0.6s ease-in-out;
+}
+
+#img-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.comments > div > p {
+  background-color: var(--gray-border);
+  color: var(--black);
+  width: 100%;
+}
+
+.comments > div > p:not(:last-child) {
+  margin-bottom: 0.7rem;
+}
+
+#name-email {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--gray-border);
+  padding-bottom: 0.2rem;
+  padding-top: 0.5rem;
+  border-radius: 10px 10px 0px 0px;
+  justify-content: space-between;
+}
+
+#comment-name {
+  margin-right: 1rem;
+  font-family: "SFProTextBold";
+  padding-left: 0.5rem;
+}
+
+#comment-email {
+  font-family: "SFProTextBold";
+  padding-right: 0.5rem;
+}
+
+#comment-body {
+  width: 100%;
+  height: auto;
+  border-radius: 0px 0px 10px 10px;
+  border-top: var(--white) 2px solid;
+  padding: 0.5rem;
+  font-family: "SFProTextRegular";
+  font-size: 1rem;
+}
+
+#comment-name::first-letter,
+#comment-body::first-letter {
+  text-transform: uppercase;
+}
+
 .container-line {
   position: relative;
   display: flex;
@@ -317,8 +425,9 @@ header {
 }
 
 .image-article {
-  width: fit-content;
-  max-width: 304px;
+  width: 304px;
+  height: 176px;
+  object-fit: cover;
 }
 
 .newsletter {

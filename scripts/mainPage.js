@@ -10,15 +10,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function fetchPosts() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('https://jsonplaceholder.typicode.com/posts');
+            const response = yield fetch("https://jsonplaceholder.typicode.com/posts");
             const posts = yield response.json();
-            const formattedPosts = posts.slice(0, 12).map((post) => {
-                return Object.assign(Object.assign({}, post), { title: capitalizeFirstLetter(post.title), body: capitalizeFirstLetter(post.body) });
-            });
+            const formattedPosts = yield Promise.all(posts.slice(0, 12).map((post) => __awaiter(this, void 0, void 0, function* () {
+                const postResponse = yield fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`);
+                const comments = yield postResponse.json();
+                const formattedComments = comments.map((comment) => ({
+                    name: comment.name,
+                    email: comment.email,
+                    body: comment.body
+                }));
+                return Object.assign(Object.assign({}, post), { title: capitalizeFirstLetter(post.title), body: capitalizeFirstLetter(post.body), comments: formattedComments });
+            })));
             return formattedPosts;
         }
         catch (error) {
-            console.error('Erro ao buscar posts:', error);
+            console.error("Erro ao buscar posts:", error);
             return [];
         }
     });
@@ -29,50 +36,32 @@ function capitalizeFirstLetter(text) {
 function fetchPexelsImages() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('https://api.pexels.com/v1/search?query=nature&orientation=landscape&per_page=12', {
+            const response = yield fetch("https://api.pexels.com/v1/search?query=nature&orientation=landscape&per_page=12", {
                 headers: {
-                    Authorization: 'GklaqEoUQnwItsosMnN7j545MRDy0Eh0uJi9mWI540CeFnMr4GBwsCkh' // Substitua pela sua chave de API Pexels
+                    Authorization: "GklaqEoUQnwItsosMnN7j545MRDy0Eh0uJi9mWI540CeFnMr4GBwsCkh" // Substitua pela sua chave de API Pexels
                 }
             });
             const data = yield response.json();
             return data.photos;
         }
         catch (error) {
-            console.error('Erro ao buscar imagens do Pexels:', error);
+            console.error("Erro ao buscar imagens do Pexels:", error);
             return [];
         }
     });
 }
-function requestImage() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const linkAPI = yield fetch('https://jsonplaceholder.typicode.com/photos');
-            const linkData = yield linkAPI.json();
-            const linkSlice = linkData.slice(0, 12);
-            const imgElements = document.querySelectorAll('.img-post');
-            linkSlice.forEach((imageInfo, index) => {
-                if (index < imgElements.length) {
-                    imgElements[index].setAttribute('src', imageInfo.url);
-                }
-            });
-        }
-        catch (error) {
-            console.error('Error fetching images:', error);
-        }
-    });
-}
 function createPostsElement(item) {
-    const postContainer = document.createElement('div');
-    postContainer.classList.add('item');
-    const postImage = document.createElement('img');
-    postImage.classList.add('image-article');
+    const postContainer = document.createElement("div");
+    postContainer.classList.add("item");
+    const postImage = document.createElement("img");
+    postImage.classList.add("image-article");
     postImage.src = item.image;
-    const postTitle = document.createElement('a');
-    postTitle.classList.add('grid-text');
+    const postTitle = document.createElement("a");
+    postTitle.classList.add("grid-text");
     postTitle.innerHTML = item.title;
     postTitle.href = `post.html`;
     // Adicionar evento de clique no título
-    postTitle.addEventListener('click', (event) => {
+    postTitle.addEventListener("click", (event) => {
         event.preventDefault();
         redirectToPostPage(item);
         window.location.href = postTitle.href;
@@ -82,13 +71,13 @@ function createPostsElement(item) {
     return postContainer;
 }
 function redirectToPostPage(post) {
-    localStorage.setItem('selectedPost', JSON.stringify(post));
+    localStorage.setItem("selectedPost", JSON.stringify(post));
 }
 export function relatedPosts(posts) {
-    localStorage.setItem('relatedPosts', JSON.stringify(posts));
+    localStorage.setItem("relatedPosts", JSON.stringify(posts));
 }
 function allPostsStorage(posts) {
-    localStorage.setItem('allPosts', JSON.stringify(posts));
+    localStorage.setItem("allPosts", JSON.stringify(posts));
 }
 export function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -98,8 +87,8 @@ export function shuffleArray(array) {
     return array;
 }
 function showPosts(posts) {
-    const gridPosts = document.createElement('div');
-    gridPosts.classList.add('grid-articles');
+    const gridPosts = document.createElement("div");
+    gridPosts.classList.add("grid-articles");
     posts.forEach((item) => {
         gridPosts.appendChild(createPostsElement(item));
     });
@@ -114,18 +103,23 @@ function createAndAppendPostsContent() {
                 id: post.id,
                 title: post.title,
                 body: post.body,
-                image: pexelsImages[index].src.large
+                image: pexelsImages[index].src.large,
+                comments: post.comments.map((comment) => ({
+                    name: comment.name,
+                    email: comment.email,
+                    body: comment.body
+                }))
             }));
             allPostsStorage(combinedObjects);
             const gridArticles = showPosts(combinedObjects);
-            const gridArticlesElement = document.getElementById('grid-articles');
+            const gridArticlesElement = document.getElementById("grid-articles");
             if (gridArticlesElement) {
                 gridArticlesElement.appendChild(gridArticles);
             }
             return combinedObjects;
         }
         catch (error) {
-            console.error('Erro ao criar e inserir o conteúdo dos posts:', error);
+            console.error("Erro ao criar e inserir o conteúdo dos posts:", error);
             return [];
         }
     });

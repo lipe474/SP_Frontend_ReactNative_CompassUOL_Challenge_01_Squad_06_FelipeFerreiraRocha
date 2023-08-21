@@ -146,8 +146,9 @@ header {
 }
 
 .image-article {
-  width: fit-content;
-  max-width: 304px;
+  width: 304px;
+  height: 176px;
+  object-fit: cover;
 }
 
 footer {

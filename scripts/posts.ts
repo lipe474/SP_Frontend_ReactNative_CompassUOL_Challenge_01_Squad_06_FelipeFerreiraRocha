@@ -1,20 +1,47 @@
-import { Post } from "./mainPage";
+import { Comment, Post } from "./mainPage";
 
 function fillPostDetails() {
   const post = localStorage.getItem("selectedPost");
-  const { title, body, image } = JSON.parse(post!);
+  const postParse = JSON.parse(post!);
 
   const postDetailsDiv = document.getElementById("text-content");
 
   const postTitleElement = document.createElement("h1");
-  postTitleElement.textContent = title;
+  postTitleElement.textContent = postParse.title;
 
   const postImageElement = document.createElement("img");
-  postImageElement.src = image!;
+  postImageElement.src = postParse.image!;
   postImageElement.alt = "Post Image";
 
   const postBodyElement = document.createElement("p");
-  postBodyElement.textContent = body;
+  postBodyElement.textContent = postParse.body;
+
+  const commentsContainer = document.getElementById("comments-container");
+
+  postParse.comments.forEach((comment: Comment) => {
+    const { name, email, body } = comment;
+
+    const commentElement = document.createElement("div");
+    commentElement.id = "name-email";
+
+    const nameElement = document.createElement("p");
+    nameElement.id = "comment-name";
+    nameElement.textContent = name;
+
+    const emailElement = document.createElement("p");
+    emailElement.id = "comment-email";
+    emailElement.textContent = email;
+
+    const bodyElement = document.createElement("p");
+    bodyElement.id = "comment-body";
+    bodyElement.textContent = body;
+
+    commentElement.appendChild(nameElement);
+    commentElement.appendChild(emailElement);
+
+    commentsContainer!.appendChild(commentElement);
+    commentsContainer!.appendChild(bodyElement);
+  });
 
   postDetailsDiv!.appendChild(postTitleElement);
   postDetailsDiv!.appendChild(postImageElement);
