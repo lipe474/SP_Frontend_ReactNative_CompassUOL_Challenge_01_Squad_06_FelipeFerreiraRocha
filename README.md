@@ -1,2 +1,0 @@
-# SP_Frontend_ReactNative_CompassUOL_Challenge_01_Squad_06_FelipeFerreiraRocha
-SP_Frontend_ReactNative_CompassUOL_Squad_06_FelipeFerreiraRocha

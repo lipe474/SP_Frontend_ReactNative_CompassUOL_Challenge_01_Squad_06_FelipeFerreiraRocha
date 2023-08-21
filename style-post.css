@@ -58,8 +58,8 @@ header {
 }
 
 .header-link {
-  padding: 0px 0px 59px 0px;
-  font-size: var(--subtitle-main-font-size-small);
+  padding: 0px 0px 60px 0px;
+  font-size: var(--text-post-font-size);
   font-family: "NewYorkSmallMedium", var(--font-poppins);
   border-bottom: transparent 2px solid;
   transition: border-color 0.3s ease-in-out;
@@ -484,6 +484,13 @@ header {
   cursor: pointer;
 }
 
+.newsletter > form > button:hover {
+  background-color: var(--gray);
+  color: var(--black);
+  transition: background-color 0.5s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
 footer {
   width: 100%;
   display: flex;
@@ -511,7 +518,7 @@ footer {
 footer > section > #keywords {
   color: var(--white);
   font-family: "SFProTextRegular", var(--font-poppins);
-  font-size: var(--subtitle-main-font-size-small);
+  font-size: 1.1rem;
   margin-top: 1.125rem;
 }
 
@@ -565,4 +572,5 @@ small {
   font-size: 0.75rem;
   text-align: center;
   color: var(--white);
+  margin-bottom: 2rem;
 }

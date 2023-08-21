@@ -16,6 +16,7 @@
   --white: #ffffff;
   --black: #000000;
   --gray: #d6d6d6;
+  --gray-medium: #4e4e4e;
 }
 
 * {
@@ -60,6 +61,7 @@ header {
 }
 
 .header-link {
+  padding: 0px 0px 60px 0px;
   font-size: var(--subtitle-main-font-size-small);
   font-family: "NewYorkSmallMedium", var(--font-poppins);
   border-bottom: transparent 2px solid;
@@ -145,6 +147,11 @@ header {
   color: var(--black);
 }
 
+.grid-text:hover {
+  color: var(--gray-medium);
+  transition: color 0.3s ease-in-out;
+}
+
 .image-article {
   width: 304px;
   height: 176px;
@@ -177,7 +184,7 @@ footer {
 footer > section > #keywords {
   color: var(--white);
   font-family: "SFProTextRegular", var(--font-poppins);
-  font-size: var(--subtitle-main-font-size-small);
+  font-size: 1.1rem;
   margin-top: 1.125rem;
 }
 
@@ -231,4 +238,5 @@ small {
   font-size: 0.75rem;
   text-align: center;
   color: var(--white);
+  margin-bottom: 2rem;
 }
