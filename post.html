@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 01 - Felipe Rocha</title>
+    <link rel="stylesheet" href="style-post.css">
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">
+        <img src="assets/logo-black.svg" alt="Logo Nordic Rose">
+      </a>
+
+      <nav class="navigation">
+        <ul class="links">
+          <li><a class="header-link" href="#">BLOG</a></li>
+          <li><a class="header-link" href="#">ABOUT</a></li>
+          <li><a class="header-link" href="#">LINKS</a></li>
+          <li><a class="header-link" href="#">PROJECTS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="banner-section">
+      <h1 id="title">
+        A few words about this blog platform, Ghost, and how this site was made
+      </h1>
+
+      <p id="subtitle">
+        Why Ghost (& Figma) instead of Medium, WordPress or other options?
+      </p>
+
+      <div class="image-container">
+        <img class="banner" src="assets/banner.png"
+          alt="Imagem ilustrativa com um 7, um símbolo de + e várias telas de navegador abstrata">
+      </div>
+    </section>
+
+    <section class="content">
+      <section id="profile">
+        <section id="profile-informations">
+          <img src="assets/profile.png" alt="Foto de perfil do autor do post">
+          <div>
+            <p id="name">Mika Matikainen</p>
+            <p id="additional">Apr 15, 2020 · 4 min read</p>
+          </div>
+        </section>
+        <section id="profile-social-media">
+          <a id="social-button" href="https://www.facebook.com" target="_blank">
+            <img src="assets/facebook.svg" alt="Logo do facebook">
+          </a>
+          <a id="social-button" href="https://www.twitter.com" target="_blank">
+            <img src="assets/twitter.svg" alt="Logo do twitter">
+          </a>
+          <a id="social-button" href="https://www.whatsapp.com" target="_blank">
+            <img src="assets/whatsapp.svg" alt="Logo do whatsapp">
+          </a>
+        </section>
+      </section>
+      <section id="text-content" class="text-content">
+        <!-- img class: post-image -->
+        <!-- h1 class: post-title -->
+        <!-- p class: post-content -->
+      </section>
+
+      <section class="share-content">
+        <a id="social-button" href="https://www.facebook.com" target="_blank">
+          <img src="assets/facebook.svg" alt="Logo do facebook">
+          <p>Share on facebook</p>
+        </a>
+        <a id="social-button" href="https://www.twitter.com" target="_blank">
+          <img src="assets/twitter.svg" alt="Logo do twitter">
+          <p>Share on twitter</p>
+        </a>
+      </section>
+      <p class="tags">
+        Tags:
+        <a href>product design,</a>
+        <a href>culture</a>
+      </p>
+
+      <section class="profile-description">
+        <img src="assets/profile.png" alt="Foto de perfil do autor do post">
+        <div>
+          <p class="description">
+            <strong id="name">Mika Matikainen</strong> is a
+            Design Founder & Advisor, Berlin School of Creative Leadership
+            Executive MBA participant, Zippie advisor, Wolt co-founder, and
+            Nordic Rose stakeholder.
+          </p>
+        </div>
+      </section>
+
+      <section class="comments">
+        <h2>Comments</h2>
+
+        <div id="comments-container">
+          <!-- <div id="name-email"> -->
+          <!-- <p id="comment-name">Felipe Rocha</p> -->
+          <!-- <p id="comment-email">felipe@gmail.com</p> -->
+          <!-- </div> -->
+          <!-- <p id="comment-body">Lorem ipsum dolor sit amet.</p> -->
+        </div>
+        <form action>
+          <input type="text" placeholder="Add your comment...">
+          <button type="submit"><img id="img-button" src="assets/arrow-up.svg"
+              alt="Seta para cima"></button>
+        </form>
+      </section>
+    </section>
+    <div class="container-line">
+      <div class="line"></div>
+      <img class="eye-line" src="assets/eye.png" alt="Image">
+    </div>
+    <section class="related">
+      <h2 id="title-related-articles">What to read next</h2>
+      <div id="grid-articles" class="grid-articles">
+        <!-- div class: item  -->
+        <!-- img class: image-article -->
+        <!-- a class: grid-text -->
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h1>Sign up for the newsletter</h1>
+      <p>If you want relevant updates occasionally, sign up for the private
+        newsletter. Your email is never shared. </p>
+      <form action>
+        <input type="email" placeholder="Enter your email...">
+        <button type="submit">SIGN UP</button>
+      </form>
+    </section>
+
+    <footer>
+      <section class="keywords">
+        <p id="keywords"><strong>DIGITAL PRODUCT DESIGN</strong> REMOTE WORK
+          <strong>UX DESIGN</strong> DISTRIBUTED TEAMS <strong>CREATIVITY</strong>
+          STRATEGY <strong>SUSPENSE</strong> GROWTH</p>
+      </section>
+
+      <section class="section-baseboard">
+        <img id="logo-footer" src="assets/logo-white.svg"
+          alt="Logo Nordic Rose Branco">
+        <p id="baseboard">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit
+          tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce
+          a nunc eget ligula suscipit finibus.
+        </p>
+      </section>
+
+      <section class="footer">
+        <nav class="social-media">
+          <ul class="links">
+            <li><a class="footer-link" target="_blank"
+                href="https://www.twitter.com">Twitter</a></li>
+            <li><a class="footer-link" target="_blank"
+                href="https://www.linkedin.com">Linkedin</a></li>
+            <li><a class="footer-link" target="_blank"
+                href="https://www.github.com">GitHub</a></li>
+          </ul>
+        </nav>
+        <small>© 2012–2020 Nordic Rose Co. <br>All rights reserved.</small>
+      </section>
+    </footer>
+  </body>
+  <script type="module" src="scripts/posts.js"></script>
+</html>

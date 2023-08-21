@@ -16,9 +16,9 @@
   </head>
   <body>
     <header>
-      <section class="logo">
-        <img src="assets/logo-black.svg" alt="Logo Nordic Rose">
-      </section>
+      <a class="logo" href="#">
+        <img src="assets/logo-black.svg" alt="Logo Nordic Rose Preto">
+      </a>
 
       <nav class="navigation">
         <ul class="links">
@@ -50,109 +50,24 @@
         All articles
       </h2>
 
-      <div class="grid-articles">
-        <div class="item">
-          <img class="image-article"
-            src="posts/post1.png">
-          <a class="grid-text" href="#">
-            Here are some things you should know regarding how we work
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post2.png">
-          <a class="grid-text" href="#">
-            Granny gives everyone the finger, and other tips from OFFF Barcelona
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post3.png">
-          <a class="grid-text" href="#">
-            Hello world, or, in other words, why this blog exists
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post4.png">
-          <a class="grid-text" href="#">
-            Here are some things you should know regarding how we work
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post5.png">
-          <a class="grid-text" href="#">
-            Connecting artificial intelligence with digital product design
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post6.png">
-          <a class="grid-text" href="#">
-            It's all about finding the perfect balance
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post7.png">
-          <a class="grid-text" href="#">
-            I believe learning is the most important skill
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post8.png">
-          <a class="grid-text" href="#">
-            Clients are part of the team
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post9.png">
-          <a class="grid-text" href="#">
-            Clients are part of the team
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post10.png">
-          <a class="grid-text" href="#">
-            Here are some things you should know regarding how we work
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post11.png">
-          <a class="grid-text" href="#">
-            Connecting artificial intelligence with digital product design
-          </a>
-        </div>
-        <div class="item">
-          <img class="image-article"
-            src="posts/post12.png">
-          <a class="grid-text" href="#">
-            How modern remote working tools get along with Old School Cowboy's
-            methods
-          </a>
-        </div>
+      <div id="grid-articles" class="grid-articles">
+        <!-- div class: item  -->
+        <!-- img class: image-article -->
+        <!-- a class: grid-text -->
       </div>
+
     </section>
 
     <footer>
       <section class="keywords">
-        <p id="keywords"><strong>DIGITAL PRODUCT DESIGN</strong></p>
-        <p id="keywords">REMOTE WORK</p>
-        <p id="keywords"><strong>UX DESIGN</strong></p>
-        <p id="keywords">DISTRIBUTED TEAMS</p>
-        <p id="keywords"><strong>CREATIVITY</strong></p>
-        <p id="keywords">STRATEGY</p>
-        <p id="keywords"><strong>SUSPENSE</strong></p>
-        <p id="keywords">GROWTH</p>
+        <p id="keywords"><strong>DIGITAL PRODUCT DESIGN</strong> REMOTE WORK
+          <strong>UX DESIGN</strong> DISTRIBUTED TEAMS <strong>CREATIVITY</strong>
+          STRATEGY <strong>SUSPENSE</strong> GROWTH</p>
       </section>
 
       <section class="section-baseboard">
-        <img id="logo-footer" src="assets/logo-white.svg" alt="Logo Nordic Rose">
+        <img id="logo-footer" src="assets/logo-white.svg"
+          alt="Logo Nordic Rose Branco">
         <p id="baseboard">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit
           tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce
@@ -163,13 +78,17 @@
       <section class="footer">
         <nav class="social-media">
           <ul class="links">
-            <li><a class="footer-link" href="#">Twitter</a></li>
-            <li><a class="footer-link" href="#">Linkedin</a></li>
-            <li><a class="footer-link" href="#">GitHub</a></li>
+            <li><a class="footer-link" target="_blank"
+                href="https://www.twitter.com">Twitter</a></li>
+            <li><a class="footer-link" target="_blank"
+                href="https://www.linkedin.com">Linkedin</a></li>
+            <li><a class="footer-link" target="_blank"
+                href="https://www.github.com">GitHub</a></li>
           </ul>
         </nav>
         <small>© 2012–2020 Nordic Rose Co. <br>All rights reserved.</small>
       </section>
     </footer>
   </body>
+  <script type="module" src="scripts/mainPage.js"></script>
 </html>
