@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -44,6 +43,24 @@ function fetchPexelsImages() {
         }
     });
 }
+function requestImage() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const linkAPI = yield fetch('https://jsonplaceholder.typicode.com/photos');
+            const linkData = yield linkAPI.json();
+            const linkSlice = linkData.slice(0, 12);
+            const imgElements = document.querySelectorAll('.img-post');
+            linkSlice.forEach((imageInfo, index) => {
+                if (index < imgElements.length) {
+                    imgElements[index].setAttribute('src', imageInfo.url);
+                }
+            });
+        }
+        catch (error) {
+            console.error('Error fetching images:', error);
+        }
+    });
+}
 function createPostsElement(item) {
     const postContainer = document.createElement('div');
     postContainer.classList.add('item');
@@ -66,7 +83,19 @@ function createPostsElement(item) {
 }
 function redirectToPostPage(post) {
     localStorage.setItem('selectedPost', JSON.stringify(post));
-    window.location.href = 'post.html';
+}
+export function relatedPosts(posts) {
+    localStorage.setItem('relatedPosts', JSON.stringify(posts));
+}
+function allPostsStorage(posts) {
+    localStorage.setItem('allPosts', JSON.stringify(posts));
+}
+export function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 function showPosts(posts) {
     const gridPosts = document.createElement('div');
@@ -87,15 +116,22 @@ function createAndAppendPostsContent() {
                 body: post.body,
                 image: pexelsImages[index].src.large
             }));
+            allPostsStorage(combinedObjects);
             const gridArticles = showPosts(combinedObjects);
             const gridArticlesElement = document.getElementById('grid-articles');
             if (gridArticlesElement) {
                 gridArticlesElement.appendChild(gridArticles);
             }
+            return combinedObjects;
         }
         catch (error) {
             console.error('Erro ao criar e inserir o conteúdo dos posts:', error);
+            return [];
         }
     });
 }
-createAndAppendPostsContent();
+const allRelatedPosts = createAndAppendPostsContent();
+allRelatedPosts.then((posts) => {
+    const shuffledPosts = shuffleArray(posts);
+    relatedPosts(shuffledPosts.slice(0, 6));
+});

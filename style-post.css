@@ -1,30 +1,29 @@
 @import url("fonts.css");
 
 :root {
-  --font-poppins: 'Poppins', sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
   /* Main Page sizes */
   --title-font-size-large: 3.375rem; /* 54px  */
   --title-font-size-medium: 2.75rem; /* 44px  */
   --subtitle-main-font-size-medium: 1.375rem; /* 22px  */
   --subtitle-main-font-size-small: 1.25rem; /* 20px  */
-  
 
   /* Post sizes */
   --subtitle-post-font-size: 2rem; /* 32px  */
   --text-post-font-size: 1.25rem; /* 20px  */
   --author-informations-font-size: 1rem; /* 16px  */
 
-  --white: #FFFFFF;
+  --white: #ffffff;
   --black: #000000;
-  --gray: #D6D6D6;
-  --gray-border: #EAEAEA
+  --gray: #d6d6d6;
+  --gray-border: #eaeaea;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -46,7 +45,6 @@ header {
   background-color: var(--white);
   position: fixed;
 }
-
 
 .logo {
   min-height: 1.25rem;
@@ -134,24 +132,21 @@ header {
 #profile-informations {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #name {
   font-family: "SFProTextBold";
   font-size: var(--author-informations-font-size);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.7px;
 }
 
 #additional {
+  margin-top: 0.5rem;
   font-family: "SFProTextRegular";
   font-size: var(--author-informations-font-size);
-}
-
-#profile-informations {
-  justify-content: center;
-  align-items: center;
 }
 
 #profile-informations > img {
@@ -178,7 +173,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 #social-button:not(:last-child) {
@@ -206,10 +200,122 @@ header {
   font-family: "NewYorkMediumRegular";
   font-size: var(--text-post-font-size);
   margin-top: 2.5rem;
+  margin-bottom: 2.375rem;
   line-height: 2rem;
 }
 
-.text-content > p::first-letter,
-.text-content > h1::first-letter {
-  text-transform: uppercase;
+.share-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 5px 0px rgb(233, 233, 233);
+  margin-top: 2.375rem;
+  margin-bottom: 2rem;
+  border: var(--gray-border) 1px solid;
+  border-radius: 4px;
+  height: 4rem;
+}
+
+.share-content > #social-button {
+  display: flex;
+  justify-content: center;
+}
+
+.share-content > a > p {
+  font-family: "SFProTextMedium";
+  font-size: var(--author-informations-font-size);
+  color: var(--black);
+  margin-left: 1rem;
+}
+
+.tags {
+  font-family: "SFProTextMedium";
+  font-size: var(--author-informations-font-size);
+  padding-bottom: 2.125rem;
+  border-bottom: var(--black) 2px dotted;
+}
+
+.tags > a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.profile-description {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 3.125rem;
+}
+
+.description {
+  font-family: "NewYorkSmallRegular";
+  font-size: var(--author-informations-font-size);
+  line-height: 1.5rem;
+}
+
+.profile-description > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.container-line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.eye-line {
+  margin-top: 3.125rem;
+  margin-bottom: 1.25rem;
+  width: 82px;
+  z-index: -1;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  top: 60%;
+  z-index: -2;
+}
+
+.related {
+  width: 100%;
+  max-width: 968px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  flex-direction: column;
+}
+
+#title-related-articles {
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  font-size: var(--title-font-size-medium);
+  font-family: "NewYorkExtraLargeBold", var(--font-poppins);
+  text-align: center;
+}
+
+.grid-articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2.125rem;
+  column-gap: 1.75rem;
+}
+
+.item {
+  text-align: center;
+}
+
+.grid-text {
+  font-family: "SFProDisplayMedium", var(--font-poppins);
+  font-size: var(--subtitle-main-font-size-medium);
+  color: var(--black);
+}
+
+.image-article {
+  width: fit-content;
+  max-width: 304px;
 }

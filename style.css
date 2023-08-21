@@ -1,7 +1,7 @@
-@import url('fonts.css');
+@import url("fonts.css");
 
 :root {
-  --font-poppins: 'Poppins', sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
   /* Main Page sizes */
   --title-font-size-large: 3.375rem; /* 54px  */
@@ -61,7 +61,7 @@ header {
 
 .header-link {
   font-size: var(--subtitle-main-font-size-small);
-  font-family: 'NewYorkSmallMedium', var(--font-poppins);
+  font-family: "NewYorkSmallMedium", var(--font-poppins);
   border-bottom: transparent 2px solid;
   transition: border-color 0.3s ease-in-out;
   color: var(--black);
@@ -98,7 +98,7 @@ header {
   margin-bottom: 2rem;
   margin-left: 18.125rem;
   margin-right: 18.125rem;
-  font-family: 'NewYorkExtraLargeBold', var(--font-poppins);
+  font-family: "NewYorkExtraLargeBold", var(--font-poppins);
   font-size: var(--title-font-size-large);
 }
 
@@ -106,17 +106,9 @@ header {
   margin-left: 26.5rem;
   margin-right: 26.5rem;
   margin-bottom: 2.125rem;
-  font-family: 'SFMonoLight', var(--font-poppins);
+  font-family: "SFMonoLight", var(--font-poppins);
   text-align: center;
   font-size: var(--subtitle-main-font-size-small);
-}
-
-#title-articles {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  font-size: var(--title-font-size-medium);
-  font-family: 'NewYorkExtraLargeBold', var(--font-poppins);
-  text-align: center;
 }
 
 .articles {
@@ -126,6 +118,14 @@ header {
   margin-bottom: 4rem;
   flex-direction: column;
   border-top: var(--black) 2px solid;
+}
+
+#title-articles {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: var(--title-font-size-medium);
+  font-family: "NewYorkExtraLargeBold", var(--font-poppins);
+  text-align: center;
 }
 
 .grid-articles {
@@ -140,7 +140,7 @@ header {
 }
 
 .grid-text {
-  font-family: 'SFProDisplayMedium', var(--font-poppins);
+  font-family: "SFProDisplayMedium", var(--font-poppins);
   font-size: var(--subtitle-main-font-size-medium);
   color: var(--black);
 }
@@ -175,13 +175,13 @@ footer {
 
 footer > section > #keywords {
   color: var(--white);
-  font-family: 'SFProTextRegular', var(--font-poppins);
+  font-family: "SFProTextRegular", var(--font-poppins);
   font-size: var(--subtitle-main-font-size-small);
   margin-top: 1.125rem;
 }
 
 footer > section > #keywords > strong {
-  font-family: 'SFProTextHeavy', var(--font-poppins);
+  font-family: "SFProTextHeavy", var(--font-poppins);
 }
 
 .section-baseboard {
@@ -198,7 +198,7 @@ footer > section > #keywords > strong {
 }
 
 #baseboard {
-  font-family: 'NewYorkSmallRegular', var(--font-poppins);
+  font-family: "NewYorkSmallRegular", var(--font-poppins);
   color: var(--white);
   text-align: center;
   margin: 2rem 29.375rem;
@@ -218,7 +218,7 @@ footer > section > #keywords > strong {
 }
 
 .footer-link {
-  font-family: 'SFProTextMedium', var(--font-poppins);
+  font-family: "SFProTextMedium", var(--font-poppins);
   font-size: 1rem;
   text-align: center;
   color: var(--white);
@@ -226,7 +226,7 @@ footer > section > #keywords > strong {
 }
 
 small {
-  font-family: 'SFProTextRegular', var(--font-poppins);
+  font-family: "SFProTextRegular", var(--font-poppins);
   font-size: 0.75rem;
   text-align: center;
   color: var(--white);
